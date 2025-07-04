@@ -1,7 +1,9 @@
 
 import entity.User;
-import org.hibernate.Session;
+import lombok.extern.log4j.Log4j2;
 
+import org.hibernate.Session;
+@Log4j2
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +12,7 @@ public class Main {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         session.getTransaction().begin();
+        log.info("ааааа");
         User user = new User();
         user.setPassword("111d");
         user.setUsername("Дятелf");
