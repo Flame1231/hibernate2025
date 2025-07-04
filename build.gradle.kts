@@ -12,10 +12,14 @@ repositories {
 val hibernanteVersion:String by project
 
 dependencies {
+// https://mvnrepository.com/artifact/org.postgresql/postgresql
+implementation("org.postgresql:postgresql:42.7.7")
     // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
     implementation("org.hibernate.orm:hibernate-core:$hibernanteVersion")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    compileOnly("org.projectlombok:lombok:1.18.32")       // Только на этапе компиляции
+        annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
 
 tasks.test {
